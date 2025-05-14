@@ -1,6 +1,6 @@
 import  express  from 'express';
-import middle_ware from './middleWare.js';
-import stage from './endpoints.js';
+import middle_ware from './middleWare/middleWare.js';
+import stage from './controller/users.js';
 const app = express()
 
 app.use(middle_ware)

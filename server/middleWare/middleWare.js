@@ -1,5 +1,4 @@
 import  express  from 'express';
-import mysql  from 'mysql2/promise';
 import cors from 'cors'
 import session from 'express-session';
 //create database connection
@@ -20,16 +19,5 @@ middle_ware.use(session({
         maxAge: 60 * 60 * 1000
     }
 }))
-const conn = mysql.createPool({
-    host:"127.0.0.1",
-    user:"root",
-    password:"",
-    database:"stage",
-    waitForConnections:true,
-})
-conn.getConnection()
-.then((res)=>{console.log("connected to DB")})
-.catch((err)=>{console.log("Error During Connection")})
 
-export {conn}
 export default middle_ware
